@@ -14,13 +14,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install npm packages
+        run: npm ci
+        env:
+          CLOUDSMITH_TOKEN: ${{ secrets.CLOUDSMITH_TOKEN }}
+      - name: Run the server
         run: |
-          npm ci
           nohup npm run dev > output.log 2>&1 &
           sleep 5
           curl -I http://localhost:1342/
-        env:
-          LEVEL_CI_TOKEN: ${{ secrets.LEVEL_CI_TOKEN }}
       - name: Run Cypress tests
         run: |
           npm run test:cypress
