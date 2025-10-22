@@ -16,7 +16,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "types": ["cypress", "@userway/a11y-cypress"]
+    "types": ["cypress", "@level-ci/a11y-cypress"]
   },
   "include": ["src", "cypress", "playwright"]
 }
