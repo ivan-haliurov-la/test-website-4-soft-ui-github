@@ -29,7 +29,3 @@ jobs:
         uses: levelaccess/level-ci@qa
         env:
           LEVEL_CI_TOKEN: ${{ secrets.LEVEL_CI_TOKEN }}
-      # - name: Run Playwright tests
-      #   run: |
-      #     npx playwright install chromium
-      #     npm run test:playwright
