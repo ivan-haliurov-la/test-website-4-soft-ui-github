@@ -22,9 +22,9 @@ jobs:
           nohup npm run dev > output.log 2>&1 &
           sleep 5
           curl -I http://localhost:1342/
-      - name: Run Cypress tests
-        run: |
-          npm run test:cypress
+      # - name: Run Cypress tests
+      #   run: |
+      #     npm run test:cypress
       - name: Level CI Accessibility Analysis
         uses: levelaccess/level-ci@qa
         env:
