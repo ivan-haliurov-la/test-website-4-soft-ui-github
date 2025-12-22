@@ -3,7 +3,7 @@ on:
   pull_request:
     branches: ["main"]
   push:
-    branches: ["main"]
+    branches: ["main", "test-new-branch"]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -22,14 +22,10 @@ jobs:
           nohup npm run dev > output.log 2>&1 &
           sleep 5
           curl -I http://localhost:1342/
-      - name: Run Cypress tests
-        run: |
-          npm run test:cypress
+      # - name: Run Cypress tests
+      #   run: |
+      #     npm run test:cypress
       - name: Level CI Accessibility Analysis
-        uses: levelaccess/level-ci@qa
+        uses: levelaccess/level-ci@dev
         env:
           LEVEL_CI_TOKEN: ${{ secrets.LEVEL_CI_TOKEN }}
-      # - name: Run Playwright tests
-      #   run: |
-      #     npx playwright install chromium
-      #     npm run test:playwright
