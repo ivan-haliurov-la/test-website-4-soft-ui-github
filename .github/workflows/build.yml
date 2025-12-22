@@ -26,6 +26,6 @@ jobs:
       #   run: |
       #     npm run test:cypress
       - name: Level CI Accessibility Analysis
-        uses: levelaccess/level-ci@qa
+        uses: levelaccess/level-ci@dev
         env:
           LEVEL_CI_TOKEN: ${{ secrets.LEVEL_CI_TOKEN }}
